@@ -7,8 +7,8 @@ public class Bot extends Player {
     private BotDifficultyLevel difficultyLevel;
     private BotPlayingStrategy botPlayingStrategy;
 
-    public Bot(String name, BotDifficultyLevel difficultyLevel, Symbol symbol) {
-        super(name, symbol);
+    public Bot(String name, BotDifficultyLevel difficultyLevel, Symbol symbol, PlayerType type) {
+        super(name, symbol, type);
         this.difficultyLevel = difficultyLevel;
         this.botPlayingStrategy = BotPlayingFactory.getBotPlayingStrategy(difficultyLevel);
     }

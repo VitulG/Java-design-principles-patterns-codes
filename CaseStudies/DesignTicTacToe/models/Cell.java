@@ -13,6 +13,13 @@ public class Cell {
         this.player = null;
     }
 
+    public void displayCell() {
+        if(player == null) {
+            System.out.println("| |");
+        }
+        System.out.println("| "+this.player.getPlayerSymbol().getSymbol()+" |");
+    }
+
     public int getRow() {
         return row;
     }

@@ -3,10 +3,20 @@ package CaseStudies.DesignTicTacToe.models;
 public abstract class Player {
     private String playerName;
     private Symbol playerSymbol;
+    private PlayerType playerType;
 
-    public Player(String playerName, Symbol playerSymbol) {
+    public PlayerType getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(PlayerType playerType) {
+        this.playerType = playerType;
+    }
+
+    public Player(String playerName, Symbol playerSymbol, PlayerType playerType) {
         this.playerName = playerName;
         this.playerSymbol = playerSymbol;
+        this.playerType = playerType;
     }
 
     public String getPlayerName() {

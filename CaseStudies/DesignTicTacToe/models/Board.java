@@ -20,6 +20,14 @@ public class Board {
         }
     }
 
+    public void printBoard() {
+        for(List<Cell> row : this.board) {
+            for(Cell cell : row) {
+                cell.displayCell();
+            }
+            System.out.println();
+        }
+    }
     public int getBoardSize() {
         return boardSize;
     }
