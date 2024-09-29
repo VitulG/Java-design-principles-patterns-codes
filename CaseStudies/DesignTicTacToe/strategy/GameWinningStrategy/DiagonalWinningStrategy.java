@@ -1,4 +1,4 @@
-package CaseStudies.DesignTicTacToe.strategy;
+package CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy;
 
 import CaseStudies.DesignTicTacToe.models.Board;
 import CaseStudies.DesignTicTacToe.models.Move;

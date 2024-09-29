@@ -1,9 +1,7 @@
 package CaseStudies.DesignTicTacToe.models;
 
 import CaseStudies.DesignTicTacToe.factory.BotPlayingFactory;
-import CaseStudies.DesignTicTacToe.strategy.BotPlayingStrategy;
-
-import java.util.Scanner;
+import CaseStudies.DesignTicTacToe.strategy.BotPlayingStrategy.BotPlayingStrategy;
 
 public class Bot extends Player {
     private BotDifficultyLevel difficultyLevel;

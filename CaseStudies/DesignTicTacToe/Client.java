@@ -2,12 +2,11 @@ package CaseStudies.DesignTicTacToe;
 
 import CaseStudies.DesignTicTacToe.Exception.InvalidMoveException;
 import CaseStudies.DesignTicTacToe.controller.GameController;
-import CaseStudies.DesignTicTacToe.factory.BotPlayingFactory;
 import CaseStudies.DesignTicTacToe.models.*;
-import CaseStudies.DesignTicTacToe.strategy.ColumnWinningStrategy;
-import CaseStudies.DesignTicTacToe.strategy.DiagonalWinningStrategy;
-import CaseStudies.DesignTicTacToe.strategy.RowWinningStrategy;
-import CaseStudies.DesignTicTacToe.strategy.WinningStrategy;
+import CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy.ColumnWinningStrategy;
+import CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy.DiagonalWinningStrategy;
+import CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy.RowWinningStrategy;
+import CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy.WinningStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,9 +4,8 @@ import CaseStudies.DesignTicTacToe.Exception.InvalidMoveException;
 import CaseStudies.DesignTicTacToe.models.Game;
 import CaseStudies.DesignTicTacToe.models.GameState;
 import CaseStudies.DesignTicTacToe.models.Player;
-import CaseStudies.DesignTicTacToe.strategy.WinningStrategy;
+import CaseStudies.DesignTicTacToe.strategy.GameWinningStrategy.WinningStrategy;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameController {
