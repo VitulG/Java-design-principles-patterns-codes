@@ -3,6 +3,8 @@ package CaseStudies.DesignTicTacToe.models;
 import CaseStudies.DesignTicTacToe.factory.BotPlayingFactory;
 import CaseStudies.DesignTicTacToe.strategy.BotPlayingStrategy;
 
+import java.util.Scanner;
+
 public class Bot extends Player {
     private BotDifficultyLevel difficultyLevel;
     private BotPlayingStrategy botPlayingStrategy;
@@ -27,5 +29,10 @@ public class Bot extends Player {
 
     public void setBotPlayingStrategy(BotPlayingStrategy botPlayingStrategy) {
         this.botPlayingStrategy = botPlayingStrategy;
+    }
+
+    @Override
+    public Move makeMove(Board board) {
+        return botPlayingStrategy.makeMove(board);
     }
 }

@@ -1,6 +1,8 @@
 package CaseStudies.DesignTicTacToe;
 
+import CaseStudies.DesignTicTacToe.Exception.InvalidMoveException;
 import CaseStudies.DesignTicTacToe.controller.GameController;
+import CaseStudies.DesignTicTacToe.factory.BotPlayingFactory;
 import CaseStudies.DesignTicTacToe.models.*;
 import CaseStudies.DesignTicTacToe.strategy.ColumnWinningStrategy;
 import CaseStudies.DesignTicTacToe.strategy.DiagonalWinningStrategy;
@@ -24,7 +26,7 @@ public class Client {
         Symbol symbolForHuman = new Symbol('X');
         Symbol symbolForBot = new Symbol('O');
         players.add(new Human("Vitul", symbolForHuman, PlayerType.HUMAN));
-        players.add(new Human("Bot", symbolForBot, PlayerType.BOT));
+        players.add(new Bot("Bot", BotDifficultyLevel.EASY, symbolForBot, PlayerType.BOT));
 
         List<WinningStrategy> winningStrategies = List.of(new RowWinningStrategy(),
                 new ColumnWinningStrategy(), new DiagonalWinningStrategy());
@@ -44,10 +46,19 @@ public class Client {
                 controller.undoMove(game);
                 continue;
             }
-            controller.makeMove(game);
+            try {
+                controller.makeMove(game);
+            } catch (InvalidMoveException invalidMoveException) {
+                System.out.println(invalidMoveException.getMessage());
+            }
         }
 
-
+        controller.printBoard(game);
+        if(controller.checkGameState(game).equals(GameState.GAME_OVER)) {
+            System.out.println("Game Over. Winner: " + game.getWinner().getPlayerName());
+        }else {
+            System.out.println("Game Over. It's a Draw");
+        }
 
     }
 }

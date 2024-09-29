@@ -1,5 +1,6 @@
 package CaseStudies.DesignTicTacToe.models;
 
+import CaseStudies.DesignTicTacToe.Exception.InvalidMoveException;
 import CaseStudies.DesignTicTacToe.strategy.WinningStrategy;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Game {
     private List<WinningStrategy> winningStrategies;
 
     private Game(Builder builder) {
-        this.board = new Board(builder().boardSize);
+        this.board = new Board(builder.boardSize);
         this.players = builder.players;
         this.moves = new ArrayList<>();
         this.winner = null;
@@ -152,7 +153,57 @@ public class Game {
         this.winningStrategies = winningStrategies;
     }
 
-    public Move makeMove() {
-        return null;
+    private boolean validateMoveMethod(Move move) {
+        int row = move.getCell().getRow();
+        int col = move.getCell().getCol();
+
+        if(row < 0 || col < 0 || row >= board.getBoardSize() || col >= board.getBoardSize()) {
+            return false;
+        }
+        return move.getCell().getCellState() != CellState.FILLED && move.getCell().getCellState() != CellState.BLOCKED;
+    }
+
+    public void makeMove() throws InvalidMoveException {
+        Player currentPlayer = players.get(nextPlayerIndex);
+        System.out.println(currentPlayer.getPlayerName()+"'s move:");
+
+        // player will choose to move
+        Move move = currentPlayer.makeMove(board);
+
+        // validate the move by game class
+        if(!validateMoveMethod(move)) {
+            throw new InvalidMoveException("Invalid move");
+        }
+        int row = move.getCell().getRow();
+        int col = move.getCell().getCol();
+
+        Cell cell = board.getBoard().get(row).get(col);
+        cell.setCellState(CellState.FILLED);
+        cell.setRow(row);
+        cell.setCol(col);
+        cell.setPlayer(currentPlayer);
+        nextPlayerIndex =  (nextPlayerIndex+1) % players.size();
+
+        Move newMove = new Move(currentPlayer, cell);
+        moves.add(newMove);
+
+        // check winner
+        if(checkWinner(this.board, newMove)) {
+            winner = currentPlayer;
+            state = GameState.GAME_OVER;
+            System.out.println("Player "+currentPlayer.getPlayerName()+" wins!");
+        } else if(moves.size() == board.getBoardSize()*board.getBoardSize()) {
+            state = GameState.DRAW;
+            System.out.println("It's a draw!");
+        }
+    }
+
+    private boolean checkWinner(Board board, Move move) {
+        for(WinningStrategy strategy : winningStrategies) {
+            if(strategy.checkWinner(board, move)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

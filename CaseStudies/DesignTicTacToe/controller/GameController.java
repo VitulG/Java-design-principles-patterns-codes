@@ -1,5 +1,6 @@
 package CaseStudies.DesignTicTacToe.controller;
 
+import CaseStudies.DesignTicTacToe.Exception.InvalidMoveException;
 import CaseStudies.DesignTicTacToe.models.Game;
 import CaseStudies.DesignTicTacToe.models.GameState;
 import CaseStudies.DesignTicTacToe.models.Player;
@@ -22,8 +23,8 @@ public class GameController {
                 .build();
     }
 
-    public void makeMove(Game game) {
-
+    public void makeMove(Game game) throws InvalidMoveException {
+        game.makeMove();
     }
 
     public GameState checkGameState(Game game) {

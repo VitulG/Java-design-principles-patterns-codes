@@ -7,15 +7,15 @@ public class Board {
     private int boardSize;
     private List<List<Cell>> board;
 
-    public Board(int boardSize) {
-        this.boardSize = boardSize;
+    public Board(int currSize) {
+        this.boardSize = currSize;
         this.board = new ArrayList<>();
 
         for(int i =0; i<this.boardSize; i++) {
             board.add(new ArrayList<>());
 
             for(int j=0; j<this.boardSize; j++) {
-                this.board.get(i).add(new Cell(i,j));
+                this.board.get(i).add(new Cell(i, j));
             }
         }
     }
@@ -25,7 +25,7 @@ public class Board {
             for(Cell cell : row) {
                 cell.displayCell();
             }
-            System.out.println();
+            System.out.print("\n");
         }
     }
     public int getBoardSize() {

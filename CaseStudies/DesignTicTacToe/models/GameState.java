@@ -2,6 +2,6 @@ package CaseStudies.DesignTicTacToe.models;
 
 public enum GameState {
     IN_PROGRESS,
-    ENDED,
+    GAME_OVER,
     DRAW
 }

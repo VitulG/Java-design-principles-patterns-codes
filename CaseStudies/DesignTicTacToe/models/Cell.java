@@ -10,14 +10,14 @@ public class Cell {
         this.row = row;
         this.col = col;
         this.cellState = CellState.EMPTY;
-        this.player = null;
     }
 
     public void displayCell() {
         if(player == null) {
-            System.out.println("| |");
+            System.out.print("|__|");
+        }else {
+            System.out.print("| "+this.player.getPlayerSymbol().getSymbol()+" |");
         }
-        System.out.println("| "+this.player.getPlayerSymbol().getSymbol()+" |");
     }
 
     public int getRow() {

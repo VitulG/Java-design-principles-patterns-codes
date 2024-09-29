@@ -34,4 +34,6 @@ public abstract class Player {
     public void setPlayerSymbol(Symbol playerSymbol) {
         this.playerSymbol = playerSymbol;
     }
+
+    public abstract Move makeMove(Board board);
 }
