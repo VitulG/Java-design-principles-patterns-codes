@@ -1,7 +1,6 @@
 package CaseStudies.DesignParkingLot.factory;
 
 import CaseStudies.DesignParkingLot.enums.ParkingSpotStrategyType;
-import CaseStudies.DesignParkingLot.models.ParkingSpot;
 import CaseStudies.DesignParkingLot.strategies.CheapestSpotAssignmentStrategy;
 import CaseStudies.DesignParkingLot.strategies.NearestSpotAssignmentStrategy;
 import CaseStudies.DesignParkingLot.strategies.ParkingSpotAssignmentStrategy;
