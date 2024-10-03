@@ -1,8 +1,25 @@
 package CaseStudies.DesignParkingLot.dto;
 
+import CaseStudies.DesignParkingLot.enums.ResponseStatus;
+import CaseStudies.DesignParkingLot.models.Ticket;
+
 public class TicketDto {
-    private String ticketId;
-    private String parkingSpaceId;
-    private String vehicleNumber;
-    private String entryTime;
+    private Ticket ticket;
+    private ResponseStatus status;
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public ResponseStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ResponseStatus status) {
+        this.status = status;
+    }
 }

@@ -1,4 +1,4 @@
-package CaseStudies.DesignParkingLot;
+package CaseStudies.DesignParkingLot.enums;
 
 public enum PaymentStatus {
     PAID,

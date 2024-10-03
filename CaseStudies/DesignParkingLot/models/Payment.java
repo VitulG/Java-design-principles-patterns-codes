@@ -1,7 +1,7 @@
 package CaseStudies.DesignParkingLot.models;
 
-import CaseStudies.DesignParkingLot.PaymentStatus;
 import CaseStudies.DesignParkingLot.enums.PaymentMode;
+import CaseStudies.DesignParkingLot.enums.PaymentStatus;
 
 import java.time.LocalDateTime;
 

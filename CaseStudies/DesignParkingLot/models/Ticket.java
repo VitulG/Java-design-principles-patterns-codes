@@ -7,6 +7,16 @@ public class Ticket extends BaseModel{
     private LocalDateTime entryTime;
     private ParkingSpot spot;
     private Operator operator;
+    private Vehicle vehicle;
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
     private Gate gate;
 
     public String getTicketNumber() {
