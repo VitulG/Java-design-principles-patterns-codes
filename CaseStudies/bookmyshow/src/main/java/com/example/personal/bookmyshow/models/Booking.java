@@ -25,6 +25,7 @@ public class Booking extends BaseModel{
     private List<ShowSeat> showSeatList;
 
     private double totalAmount;
+
     @OneToMany
     private List<Payment> paymentWithPartialPayment;
 
