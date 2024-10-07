@@ -15,6 +15,10 @@ public class Show extends BaseModel {
 
     @ManyToOne
     private Movie movie;
+
+    @ManyToOne
+    private Theatre theatre;
+
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 

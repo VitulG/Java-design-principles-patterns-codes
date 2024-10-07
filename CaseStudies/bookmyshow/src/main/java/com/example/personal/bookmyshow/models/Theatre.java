@@ -20,4 +20,7 @@ public class Theatre extends BaseModel {
 
     @OneToMany
     private List<Screen> screens;
+
+    @OneToMany
+    private List<Show> shows;
 }

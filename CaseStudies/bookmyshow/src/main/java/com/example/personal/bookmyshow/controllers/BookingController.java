@@ -26,7 +26,7 @@ public class BookingController {
             response.setStatus(BookingStatus.BOOKED);
             return response;
         } catch(Exception ex) {
-            response.setStatus(BookingStatus.PENDING);
+            response.setStatus(BookingStatus.FAILURE);
             return response;
         }
     }

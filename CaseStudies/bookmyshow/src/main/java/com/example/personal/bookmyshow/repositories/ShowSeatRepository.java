@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface ShowSeatRepository extends JpaRepository<ShowSeat, Long> {
-    Optional<List<ShowSeat>> findAllById(List<Long> showSeatIds);
+    List<ShowSeat> findAllByIdIn(List<Long> showSeatIds);
 }
