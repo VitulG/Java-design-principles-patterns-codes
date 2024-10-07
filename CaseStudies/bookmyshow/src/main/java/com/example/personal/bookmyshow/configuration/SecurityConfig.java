@@ -2,7 +2,9 @@ package com.example.personal.bookmyshow.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
@@ -11,4 +13,21 @@ public class SecurityConfig {
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+//        httpSecurity
+//                .authorizeHttpRequests((request) -> {
+//                    try {
+//                        request
+//                                .anyRequest()
+//                                .permitAll()
+//                                .and().cors().disable()
+//                                .csrf().disable();
+//                    } catch (Exception ex) {
+//                        throw new RuntimeException(ex);
+//                    }
+//                });
+//        return httpSecurity.build();
+//    }
 }
